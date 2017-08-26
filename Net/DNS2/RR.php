@@ -494,6 +494,16 @@ abstract class Net_DNS2_RR
     }
 
     /**
+     * retrieve the canonical rdata for an RR
+     *
+     * @return string returns the canonical encoding of the RR's rdata section
+     */
+    public function rrGetCanonical() {
+        $tmp = new Net_DNS2_Packet();
+        return $this->rrGet();
+    }
+
+    /**
      * parses a standard RR format lines, as defined by rfc1035 (kinda)
      *
      * In our implementation, the domain *must* be specified- format must be
